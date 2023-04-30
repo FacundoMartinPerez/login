@@ -12,6 +12,7 @@ session_start();
 <html>
 <head>
   <title>TTech</title>
+  <link rel="icon" href="Logo Empresas.jpg" alt="Logo de la empresa" type="Logo Empresas.jpg">
 </head>
 <body>
   <style>
@@ -30,6 +31,7 @@ body{
     font-family: "Roboto", sans-serif;
 margin: 0;
 }
+
 button{
     font-size: 1.5em;
     font-weight: bold;
@@ -56,11 +58,12 @@ header{
 }
 header .logo{
 margin: 0;
-padding: 25px 30px;
+padding: 0;
 font-weight: bold;
 color: rgb(145, 77, 209);
-font-size: 1.6em;
+font-size: .7em;
 }
+
 header .container{
 display: flex;
 flex-direction: column;
@@ -70,7 +73,7 @@ header nav{
 display: flex;
 flex-direction: column;
 text-align: center;
-padding-bottom: 25px;
+flex-direction: column;
 }
 header a{
     padding: 5px 12px;
@@ -88,7 +91,7 @@ header a:hover{
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    height: 90vh;
+    height: 100vh;
     
     background-image: linear-gradient(
     0deg,
@@ -101,6 +104,9 @@ header a:hover{
 }
 #hero h1{
     color: white;
+}
+#hero a{
+    color:white;
 }
 #Nosotros{
     text-align: center;
@@ -137,7 +143,7 @@ display: none;
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-        ),url("C:/Users/tinch/Downloads/logo empresa/Logo Empresas.jpg");
+        ),url("Logo Empresas.jpg");
         
 }
 .carta:nth-child(2){
@@ -145,7 +151,7 @@ display: none;
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-        ),url("C:/Users/tinch/Downloads/logo empresa/Logo Empresas.jpg");
+        ),url("Logo Empresas.jpg");
        
 
 }
@@ -154,7 +160,7 @@ display: none;
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-        ),url("C:/Users/tinch/Downloads/logo empresa/Logo Empresas.jpg");
+        ),url("Logo Empresas.jpg");
         
 
 }
@@ -163,7 +169,7 @@ display: none;
         0deg,
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
-        ),url("C:/Users/tinch/Downloads/logo empresa/Logo Empresas.jpg");
+        ),url("Logo Empresas.jpg");
         
 
 }
@@ -204,6 +210,10 @@ footer {
     header .container{
         flex-direction: row;
         justify-content: space-between;
+    }
+    header .container .img{
+        padding:0;
+        margin:0;
     }
     header nav{
         flex-direction: row;
@@ -261,7 +271,7 @@ footer {
             0deg,
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
-            ),url("C:/Users/tinch/Downloads/first child/gestion empresarial.jpg");
+            ),url("gestion empresarial.jpg");
             
     }
     .carta:nth-child(2){
@@ -269,7 +279,7 @@ footer {
             0deg,
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
-            ),url("C:/Users/tinch/Downloads/logo empresa/Logo Empresas.jpg");
+            ),url("Logo Empresas.jpg");
            
     
     }
@@ -278,7 +288,7 @@ footer {
             0deg,
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
-            ),url("C:/Users/tinch/Downloads/logo empresa/Logo Empresas.jpg");
+            ),url("Logo Empresas.jpg");
             
     
     }
@@ -287,18 +297,23 @@ footer {
             0deg,
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
-            ),url("C:/Users/tinch/Downloads/first child/gestion empresarial.jpg");
+            ),url("gestion empresarial.jpg");
             
     
     }
     #empleo{
         text-align: center;
-        
-        color: #fff;
-        background-color: #ffffff;
+        background-image: url('bosque.jpg');
+        background-size: cover;
+        height: 800px;
+        width: 1583px;
     }
     #empleo .container{
         padding: 150px 12px;
+    }
+    #empleo .container .color-acento{
+        text-align: center;
+        margin-top: 100px; 
     }
     #contacto{
         text-align: center;
@@ -310,24 +325,39 @@ footer {
         padding: 150px 12px;
         
     }
+    #contacto .container .Empleo{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 40px 30px;
+        
+    }
 }
   </style>
     <header>
         <div class="container">
-            <p class="logo">TTech</p>
             
-           
+            <div class="logo">
+                <a href="indexx.php">
+                    
+                        <h1>TTech</h1>
+                  
+                </a>
+                </div>
+                <a> Hola, como estas
+                   <?php echo $user_data['user_name']; ?>
+                </a>
             <nav>
-                <a href="logout.php">logout</a>
+                
                 <a href="#hero">Inicio</a>
                 <a href="#Nosotros">Conocenos</a>
                 <a href="#servicios">Servicios</a>
                 <a href="#empleo">Empleos</a>
                 <a href="#contacto">Contacto</a>
-                <a href="file:///C:/Users/tinch/OneDrive/Escritorio/egg/estructura.html" style="border: 1px solid #007bff; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); padding: 5px; color: #007bff; text-decoration: none;">Soluciones Tecnológicas</a>
-                <a> Hola,
-                   <?php echo $user_data['user_name']; ?>
-                </a>
+                <a href="empresa.php" style="border: 1px solid #007bff; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); padding: 5px; color: #007bff; text-decoration: none;">Soluciones Tecnológicas</a>
+                <a href="logout.php">Cerrar Sesión</a>
             </nav>
         </div>
     </header>
@@ -335,7 +365,11 @@ footer {
         <h1>Aprendé a Programar<br>con Nosotros</h1>
         <form action="">
             <button>
+                <div clase="aplica">
+                <a href="#contacto">
                 APLICA YA!
+                </a>
+                </div>
             </button>
         </form>
         
@@ -374,6 +408,7 @@ footer {
 		</section>
         <section id="empleo">
             <div class="conteiner">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <h3> <span class="color-acento">Si quieres trabajar con nosotros primero contáctanos.
                     <br>
                     Luego te enviaremos instrucciones para que nos envíes tu CV.</span>
@@ -392,29 +427,28 @@ footer {
         </section>
         <section id="contacto">
             <div class="container">
-                <h2>Contáctanos</h2>
-                <div class="Nombre">
-                    <form>
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-            <div class="Email">
+                <h1>Contáctanos</h1>
+                <div class="Empleo">
                 <form>
+                    <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <br>
+                    <div>
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-            <div class="Mensaje">
-                <form>
+                    </div>
+                    <br>
+                    <div>
                     <label for="mensaje">Mensaje:</label>
                     <textarea id="mensaje" name="mensaje" required></textarea>
+                    <br>
+                    <br>
                     <button type="submit">Enviar</button>
+                    </div>
                 </form>
-            </div>
-            
+                </div>
             </div>
         </section>
         <footer>

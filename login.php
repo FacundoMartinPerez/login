@@ -45,7 +45,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TTech Login</title>
-    <link rel="stylesheet" href="login empresa.css">
 </head>
 <body>
     <style>
@@ -62,7 +61,7 @@ section{
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: url('C:/Users/tinch/Downloads/l/images.jpg') no-repeat;
+    background-image: url('images.jpg');
     background-size: cover;
     background-position: center;
     animation: animateBg 5s linear infinite;
@@ -76,7 +75,7 @@ section{
     position: relative;
     width: 400px;
     height: 450px;
-    background: grey;
+    background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
     display: flex;
@@ -189,7 +188,7 @@ a{
 
 
     </style>
-    <section>
+ <section>
     <div class="login-box">
         <form method="post">
             <h2>Login</h2>
@@ -216,11 +215,10 @@ a{
             <div class="register-link">
             <a href="signup.php">Signup</a>
             </div>
-        </form>
+          </form>
 
-    </div>
-   
-    </section>
+       </div>
+ </section>
      
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
 
