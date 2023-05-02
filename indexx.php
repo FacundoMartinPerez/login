@@ -12,13 +12,28 @@ session_start();
 <html>
 <head>
   <title>TTech</title>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
   <link rel="icon" href="Logo Empresas.jpg" alt="Logo de la empresa" type="Logo Empresas.jpg">
 </head>
 <body>
   <style>
-    *{
+    :root{
+        --primary: #eeeeee;
+        --secondary: #227c70;
+        --green: #82cd47;
+        --secondary-light: rgb(34, 124, 112, 0.2);
+        --secondary-light-2: rgb(127, 183, 126, 0.1);
+        --white: #fff;
+        --black: #393e46;
+
+        --shadow: 0px 2px 8px 0px var(--secpndary-light);
+    }
+
+
+*{
     box-sizing: border-box;
-    
+    list-style-type:none;
+        
 }
 html{
     scroll-behavior: smooth;
@@ -54,7 +69,7 @@ background-color: rgb(113, 40, 182);
     margin: auto;
 }
 header{
-    background-color: rgb(27, 27, 27);
+    background-color:  rgb(27, 27, 27);
 }
 header .logo{
 margin: 0;
@@ -215,11 +230,134 @@ footer {
         padding:0;
         margin:0;
     }
+    header .containers .profile-dropdown .profile-dropdown-btn .profile-usuario{
+        font-family: "Roboto", sans-serif;
+        color: white;
+        padding: 0 15px 0 2px;
+     
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+        flex-direction: row;
+        justify-content: space-between:none;
+        align-items: center;
+        color: white;
+        display:flex;
+        justify-content: space-between:none;
+       
+        height: 40px;
+        min-width: 10px;
+        
+    
+      
+        border: 0px solid #EFEEF1;
+        
+    }
+    header .containers .profile-dropdown .profile-dropdown-btn .profile-usuario .usuario{
+        margin: 0 10px;
+    }
+    .profile-dropdown-btn{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 1rem;
+        font-size:0.5rem;
+        font-weight: 500;
+        border:2px solid var(--secondary);
+        border-radius: 100px;
+        cursor: pointer;
+        width: 210px;
+        transition: box-shadow 0.2s, background-color 0.2s;
+
+    }
+    .profile-dropdown-btn:hover{
+        background-color: var(--secondary-light-2);
+        box-shadow: var(--shadow)
+    }
+    header .containers .profile-dropdown .profile-dropdown-btn .profile-usuario i{
+      color: white;
+      font-weight: bold;
+      font-size: 1em;
+     
+      justify-content: space-between:none;
+     
+      height: 30px;
+      min-width: 10px;
+    }
+    header .containers .profile-dropdown .profile-dropdown-btn .profile-usuario img{
+        position:relative;
+        height: 3rem;
+        width: 3rem;
+        object-fit: cover;
+        border-radius: 50%;
+        background-size:cover;
+    }
+    .profile-dropdown-list{
+        
+        position: absolute;
+        top: 68px;
+        width: 220px;
+        right: 105px;;
+        background-color: var(--white);
+        border-radius:10px;
+        box-shadow: var(--shadow);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    .profile-dropdown-list.active{
+        max-height: 400px;
+    }
+    .profile-dropdown-list hr{
+        border: .5px solid var(--green);
+
+    }
+    .profile-dropdown-list-item{
+        padding: 0.1rem 0 0.1rem .1rem;
+        transition: background-color 0.2s, padding-left 0.2;
+    }
+    .profile-dropdown-list-item:hover{
+        padding-left:0;
+        background-color:var(--secondary-light);
+    }
+    .profile-dropdown-list-item a{
+        display:flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--black);
+    }
+    .profile-dropdown-list-item a i{
+        margin-right: 1rem;
+        font-size: 1.1rem;
+        width: 2.3rem;
+        height:2.3rem;
+        background-color: var(--secondary);
+        color: var(--white);
+        line-height: 2rem;
+        text-align: center;
+        border-radius: 50%
+    }
     header nav{
         flex-direction: row;
         padding-bottom: 0;
         padding-right: 20px;
-    }  
+    } 
+    .navbar-list {
+        padding: 0 15px 0 2px;
+        margin-top: 14px;
+    }
+    .navbar-list li{
+        display: inline-block;
+        margin: 0 .4rem; 
+        padding: 0 15px 0 2px;
+    }
+    .navbar-list li a{
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 0 15px 0 2px;
+    } 
     #Nosotros .container {
         display: flex;
         justify-content: space-evenly;
@@ -333,10 +471,14 @@ footer {
         flex-direction: column;
         padding: 40px 30px;
         
-    }
+    } 
+    
+    
+
 }
   </style>
     <header>
+        
         <div class="container">
             
             <div class="logo">
@@ -345,22 +487,67 @@ footer {
                         <h1>TTech</h1>
                   
                 </a>
-                </div>
-                <a> Hola, como estas
-                   <?php echo $user_data['user_name']; ?>
-                </a>
+            </div>
+            
+            <div>
+                
+            </div>
             <nav>
                 
-                <a href="#hero">Inicio</a>
-                <a href="#Nosotros">Conocenos</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#empleo">Empleos</a>
-                <a href="#contacto">Contacto</a>
-                <a href="empresa.php" style="border: 1px solid #007bff; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); padding: 5px; color: #007bff; text-decoration: none;">Soluciones Tecnológicas</a>
-                <a href="logout.php">Cerrar Sesión</a>
+                <ul class="navbar-list">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#Nosotros">Conocenos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#empleo">Empleos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li> <a href="empresa.php" style="border: 1px solid #007bff; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); padding: 5px; color: #007bff; text-decoration: none;">Soluciones Tecnológicas</a></li>
+               </ul>
+                
+                <div class="containers">
+                 <div class="profile-dropdown">
+                    <div class="profile-dropdown-btn" onclick="toggle()">
+                        
+                        <div class="profile-usuario">
+                        <img src="images.jpg" alt="">
+                        <a><span class="usuario"> Bienvenido,
+                        <?php echo $user_data['user_name']; ?>
+                        </span></a>
+                        
+                        <i class="bx bx-chevron-down"></i>
+                        </div>
+                    </div>
+                    
+                    <ul class="profile-dropdown-list">
+                        <li class="profile-dropdown-list-item">
+                            <a href="#">
+                                <i class="fa-regular fa-user"></i>
+                                Editar Perfil
+                            </a>
+                        </li>
+                        <br>
+                        <li class="profile-dropdown-list-item">
+                            <a href="#">
+                                <i class="fa-regular fa-user"></i>
+                                Configuración
+                            </a>
+                        </li>
+                        <br>
+                        <hr/>
+                        <li class="profile-dropdown-list-item">
+                            <a href="logout.php">
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
             </nav>
         </div>
+        
+        
     </header>
+    
     <section id="hero">
         <h1>Aprendé a Programar<br>con Nosotros</h1>
         <form action="">
@@ -451,11 +638,13 @@ footer {
                 </div>
             </div>
         </section>
+        
         <footer>
         
             <p>Derechos reservados &copy; TTech 2023</p>
         
         </footer>
+        <script src="script.js"></script>
 
 </body>
 </html>

@@ -8,13 +8,14 @@ session_start();
     //something was posted
     $user_name = $_POST['user_name'];
     $password = $_POST['password'];
+   
 
     if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
     {
 
         //save to database
         $user_id = random_num(20);
-        $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
+        $query = "insert into users (user_id,user_name,password,email,images) values ('$user_id','$user_name','$password','$email','$images')";
 
         mysqli_query($con, $query);
 
@@ -181,14 +182,21 @@ a{
         <form method="post">
             <h2>Sign up!</h2>
             <div class="input-box"> 
-            <input type="text" required id="mail" name="user_name">
+            <input type="text" required id="name" name="user_name">
             <label>username</label>
+            </div>
+            <div class="input-box"> 
+            <input type="email" required id="email" name="email">
+            <label>email</label>
             </div>
             <div class="input-box">
             <input type="password" required id="password" name="password">
             <label>password</label>
             </div>
             <div class="button">
+            <div>
+                <input type="file" class="box" accept="image/jpg, image/jpeg, image/png">
+            </div>
             <input type="submit" value="Sign up!">
             </div>
             <div class="register-link">
