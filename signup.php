@@ -44,16 +44,53 @@ session_start();
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-image: url('bosque claro.jpg');
+body{
+    background: url('bosque oscuro login.jpg');
+   
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: 640px;
+    background: url('images.jpg') no-repeat;
+    backdrop-filter: blur(15px);
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
+    margin-top: 20px;
     animation: animateBg 5s linear infinite;
+}
+
+.content .logo{
+    font-size: 70px;
+}
+.content h2{
+    font-size: 40px;
+}
+.content h2 span{
+    font-size: 25px;
+}
+.text-sci p{
+    font-size: 16px;
+    margin: 20px;
+}
+.social-icons a i{
+    font-size: 22px;
+    color: #e4e4e4;
+    padding: 0 2px 0 20px;
+    transition: .5s ease;
+}
+.social-icons a:hover i{
+    transform: scale(1.2);
+}
+.container .logreg-box{
+    
+    
+  
+    
 }
 @keyframes animatedBg {
     100%{
@@ -177,7 +214,7 @@ a{
 
 
     </style>
-    <section>
+ <div class="container">
     <div class="login-box">
         <form method="post">
             <h2>Sign up!</h2>
@@ -205,7 +242,7 @@ a{
           </form>
 
        </div>
- </section>
+ </div>
    
 </body>
 </html>

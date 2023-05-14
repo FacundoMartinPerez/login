@@ -55,17 +55,71 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-section{
+body{
+    background: url('bosque oscuro login.jpg');
+   
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 92%;
+    height: 640px;
+    background: url('images.jpg') no-repeat;
+    backdrop-filter: blur(15px);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: animateBg 5s linear infinite;
+}
+.container .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 53%;
+    height: 100%;
+    background: transparent;
+    padding: 80px;
+    color: #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.content .logo{
+    font-size: 70px;
+}
+.content h2{
+    font-size: 40px;
+}
+.content h2 span{
+    font-size: 25px;
+}
+.text-sci p{
+    font-size: 16px;
+    margin: 20px;
+}
+.social-icons a i{
+    font-size: 22px;
+    color: #e4e4e4;
+    padding: 0 2px 0 20px;
+    transition: .5s ease;
+}
+.social-icons a:hover i{
+    transform: scale(1.2);
+}
+.container .logreg-box{
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-image: url('images.jpg');
-    background-size: cover;
-    background-position: center;
-    animation: animateBg 5s linear infinite;
+    width: calc(100% - 53%);
+    height: 100%;
 }
+
 @keyframes animatedBg {
     100%{
         filter: hue-rotate(360deg);
@@ -174,6 +228,7 @@ a{
 .register-link p a:hover{
     text-decoration: underline;
 }
+
 @media (max-width: 360px){
     .login-box{
         width: 100%;
@@ -188,7 +243,26 @@ a{
 
 
     </style>
- <section>
+ <div class="container">
+        <div class="content">
+            <h2 class="logo"><i class="bx bxl-firebase"></i>TTech</h2>
+          <div class="text-sci">
+            <h2>Bienvenido/a a Nuestra<br><span>Nueva Página Web.
+            </span></h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat dolores doloribus consequuntur soluta, inventore eos. Velit, illo commodi debitis iste in culpa totam pariatur consequatur nesciunt tempore facilis, ad voluptates.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/facundo-martin-perez-591483201/"><i class='bx 
+                    bxl-linkedin'></i></a>
+                <a href="#"><i class='bx 
+                    bxl-facebook'></i></a>
+                <a href="#"><i class='bx 
+                    bxl-instagram'></i></a>
+                <a href="#"><i class='bx 
+                    bxl-twitter'></i></a>
+            </div>
+          </div>
+        </div>
+    <div class="logreg-box">
     <div class="login-box">
         <form method="post">
             <h2>Login</h2>
@@ -218,7 +292,8 @@ a{
           </form>
 
        </div>
- </section>
+       </div>
+ </div>
      
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
 
@@ -226,6 +301,7 @@ a{
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
         
     </script>
+    <script type="module" src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
    
 </body>
 </html>
